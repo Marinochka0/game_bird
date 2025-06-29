@@ -1,36 +1,85 @@
-[FlapPyBird](https://sourabhv.github.io/FlapPyBird)
-===============
+Документация к игре "Flappy Bird" на Pygame
+1. Описание игры
+Жанр: Аркада, казуальная игра.
+Сюжет: Игрок управляет птичкой, которая должна пролетать между препятствиями (трубами), не сталкиваясь с ними и не падая на землю.
 
-A Flappy Bird Clone made using [python-pygame][pygame]
+Основные механики:
 
-> If you are in interested in the old one-file code for the game, you can [find it here][one-file-game]
+Птица падает вниз под действием гравитации.
 
-[pygame]: http://www.pygame.org
-[one-file-game]: https://github.com/sourabhv/FlapPyBird/blob/038359dc6122f8d851e816ddb3e7d28229d585e5/flappy.py
+При нажатии клавиши (пробел или ЛКМ) птица подлетает вверх.
 
+При столкновении с трубами или землей игра заканчивается.
 
-Setup (as tested on MacOS)
----------------------------
+За каждую успешно пройденную пару труб начисляются очки.
 
-1. Install Python 3 from [here](https://www.python.org/download/releases/) (or use brew/apt/pyenv)
+2. Использованные технологии
+Язык программирования: Python (версия 3.8+)
 
-2. Run `make init` (this will install pip packages, use virtualenv or something similar if you don't want to install globally)
+Библиотеки:
 
-3. Run `make` to run the game. Run `DEBUG=True make` to see rects and coords
+pygame – для отрисовки графики, обработки событий и звуков.
 
-4. Use <kbd>&uarr;</kbd> or <kbd>Space</kbd> key to play and <kbd>Esc</kbd> to close the game.
+random – для генерации случайной высоты труб.
 
-5. Optionally run `make web` to run the game in the browser (`pygbag`).
+sys – для корректного завершения игры.
 
-Notable forks
--------------
-- [FlapPyBlink Blink to control the bird](https://github.com/sero583/FlappyBlink)
-- [FlappyBird Fury Mode](https://github.com/Cc618/FlapPyBird)
-- [FlappyBird Model Predictive Control](https://github.com/philzook58/FlapPyBird-MPC)
-- [FlappyBird OpenFrameworks Port](https://github.com/TheLogicMaster/ofFlappyBird)
-- [FlappyBird On Quantum Computing](https://github.com/WingCode/QuFlapPyBird)
+3. Инструкция по запуску и управлению
+Установка и запуск
+Убедитесь, что у вас установлен Python (версия 3.8 или выше).
 
-Made something awesome from FlapPyBird? Add it to the list :)
+Установите библиотеку Pygame:pip install pygame
+Запустите игру:
+
+bash
+python flappy_bird.py
+Управление
+Пробел или ЛКМ (левая кнопка мыши) – поднять птицу вверх.
+
+ESC – выйти из игры.
+4. Список использованных ресурсов
+Графика и звуки
+Птичка: Простой спрайт, нарисованный вручную или взятый из открытых источников.
+
+Трубы: Зеленые прямоугольники с закругленными краями.
+
+Фон: Статичный или параллакс-скроллинг.
+
+Звуки:
+
+wing.wav – звук взмаха крыла.
+
+hit.wav – звук столкновения.
+
+point.wav – звук набора очка.
+
+Код
+Основной игровой цикл (main.py или flappy_bird.py).
+
+Классы для птицы (Bird), труб (Pipe), игры (Game).
+
+5. Структура проекта
+text
+flappy_bird/  
+│── assets/  
+│   ├── images/  
+│   │   ├── bird.png  
+│   │   ├── background.png  
+│   │   └── pipe.png  
+│   └── sounds/  
+│       ├── wing.wav  
+│       ├── hit.wav  
+│       └── point.wav  
+│── flappy_bird.py  
+│── README.md
+6. Возможные улучшения
+Добавить меню с кнопками "Старт" и "Выход".
+
+Реализовать систему рекордов.
+
+Добавить анимацию взмахов крыльев.
+
+Увеличить сложность со временем.
 
 
 Demo
